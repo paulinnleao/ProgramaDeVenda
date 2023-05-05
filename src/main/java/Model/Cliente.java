@@ -32,7 +32,6 @@ public class Cliente extends Pessoa{
         this.compra = new Produto(id, nome, validade, quantidade, marca, valor_bruto, valor_liquido, valor_venda);
         historico.add(this.compra);
     }
-    
     /**
      * Consulta todo o histórico do cliente
      */
@@ -63,6 +62,15 @@ public class Cliente extends Pessoa{
         super(nome, numero, email);
         this.numeroS = "(00)00000-0000";
     }
+
+    public Cliente(String numeroS, String status, String nome, String numero, String email) {
+        super(nome, numero, email);
+        this.numeroS = numeroS;
+        this.status = status;
+    }
+
+    public Cliente() {
+    }
     
     public String getStatus() {
         return status;
@@ -71,4 +79,13 @@ public class Cliente extends Pessoa{
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public String getNumeroS() {
+        return numeroS;
+    }
+
+    public void setNumeroS(String numeroS) {
+        this.numeroS = numeroS;
+    }
+    
 }
