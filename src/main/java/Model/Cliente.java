@@ -16,18 +16,36 @@ public class Cliente extends Pessoa{
     private ArrayList<Produto> historico = new ArrayList<Produto>(); //Este será o histórico de compra do cliente
     private Produto compra = new Produto();
 
-    //Registrar compra
+    
+    /**
+     * Registra a compra do produto do cliente no histórico de compras
+     * @param id
+     * @param nome
+     * @param validade
+     * @param quantidade
+     * @param marca
+     * @param valor_bruto
+     * @param valor_liquido
+     * @param valor_venda 
+     */
     void registraCompra(int id, String nome, String validade, int quantidade, String marca, double valor_bruto, double valor_liquido, double valor_venda){
         this.compra = new Produto(id, nome, validade, quantidade, marca, valor_bruto, valor_liquido, valor_venda);
         historico.add(this.compra);
     }
-    //Consulta historico
+    
+    /**
+     * Consulta todo o histórico do cliente
+     */
     void consultaHistorico(){
         for(Produto passo: historico){
             System.out.println(passo);
         }
     }
     //Busca no historico
+    /**
+     * Busca no histórico do cliente a compra com o identificador do produto.
+     * @param id 
+     */
     void buscaHistorico(int id){
         for(Produto passo: historico){
             if(passo.getId()==id){

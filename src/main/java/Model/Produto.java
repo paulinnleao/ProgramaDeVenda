@@ -23,10 +23,10 @@ public class Produto {
     private double valor_bruto;
     private double valor_liquido;
     private double valor_venda;
-
+    
     public Produto() {
     }
-
+    
     public Produto(int id, String nome, String validade, int quantidade, String marca, double valor_bruto, double valor_liquido, double valor_venda) {
         this.id = id;
         this.nome = nome;

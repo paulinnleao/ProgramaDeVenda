@@ -16,12 +16,28 @@ public class Estoque {
     Produto produto = new Produto();
     
     
-    // Adicionar produto na mochila
+    /**
+     * Adiciona um novo produto na mochila
+     * 
+     * @param id
+     * @param nome
+     * @param validade
+     * @param quantidade
+     * @param marca
+     * @param valor_bruto
+     * @param valor_liquido
+     * @param valor_venda 
+     */
     void setMochila(int id, String nome, String validade, int quantidade, String marca, double valor_bruto, double valor_liquido, double valor_venda){
         this.produto = new Produto(id, nome, validade, quantidade, marca, valor_bruto, valor_liquido, valor_venda);
         mochila.add(produto);
     }
-    // Retirar Produto da mochila
+    
+    /**
+     * Retira uma unidade da mochila passando como parâmetro o Identificador do
+     * produto.
+     * @param id 
+     */
     void retiraProduto(int id){
         for(Produto posicao: mochila){
             if(posicao.getId() == id ){
@@ -32,13 +48,20 @@ public class Estoque {
             }
         }
     }
-    // Consultar Produtos na mochila
+    
+    /**
+     * Consulta todos os produtos da mochila.
+     */
     void consultaMochila(){
         for(Produto posicao: mochila){
             System.out.println(posicao);
         }
     }
-    // Apagar Produto da mochila
+    /**
+     * Apaga o produto da mochila passando como parâmetro o Identificador do
+     * produto.
+     * @param id 
+     */
     void apagaProduto(int id){
         for(Produto posicao: mochila){
             if(posicao.getId() == id){
@@ -48,6 +71,11 @@ public class Estoque {
         }
     }
     // Buscar Produto na mochila
+    /**
+     * Busca um produto específico na mochila passando como parâmetro o Identifi
+     * cador do produto.
+     * @param id 
+     */
     void buscarProduto(int id){
         for(Produto posicao: mochila){
             if(posicao.getId()==id){
