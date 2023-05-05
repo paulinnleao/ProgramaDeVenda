@@ -4,7 +4,11 @@
  */
 package Model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,10 +27,15 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(int id, String nome, Date validade, int quantidade, String marca, double valor_bruto, double valor_liquido, double valor_venda) {
+    public Produto(int id, String nome, String validade, int quantidade, String marca, double valor_bruto, double valor_liquido, double valor_venda) {
         this.id = id;
         this.nome = nome;
-        this.validade = validade;
+        
+        try {
+            this.validade = new SimpleDateFormat("dd/MM/yyyy").parse(validade);
+        } catch (ParseException ex) {
+            Logger.getLogger(Produto.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.quantidade = quantidade;
         this.marca = marca;
         this.valor_bruto = valor_bruto;

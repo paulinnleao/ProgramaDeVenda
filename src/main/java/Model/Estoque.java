@@ -5,7 +5,6 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -18,7 +17,7 @@ public class Estoque {
     
     
     // Adicionar produto na mochila
-    void setMochila(int id, String nome, Date validade, int quantidade, String marca, double valor_bruto, double valor_liquido, double valor_venda){
+    void setMochila(int id, String nome, String validade, int quantidade, String marca, double valor_bruto, double valor_liquido, double valor_venda){
         this.produto = new Produto(id, nome, validade, quantidade, marca, valor_bruto, valor_liquido, valor_venda);
         mochila.add(produto);
     }
